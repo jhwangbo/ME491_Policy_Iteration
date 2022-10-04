@@ -10,7 +10,7 @@
 int main(int argc, char *argv[]) {
   const int map_size = 10;
 
-  std::array<Eigen::Matrix<double, map_size, map_size>, 4> rewards; // up, right, down, left
+  std::array<Eigen::Matrix<double, map_size, map_size>, 4> rewards; // 0:up, 1:right, 2:down, 3:left
   const double discount_factor = 0.9;
   srand((unsigned int) time(0));
 
