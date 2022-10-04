@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
 
   /// this generates random a reward function
   for (auto& rew: rewards)
-    rew = Eigen::Matrix<double, map_size, map_size>::Random().array() - 2.;
+    rew = (Eigen::Matrix<double, map_size, map_size>::Random().array() - 2.).matrix();
 
   /// print out your answer
   std::cout<<"optimal policy \n"<<policyIteration(rewards, discount_factor)<<std::endl;

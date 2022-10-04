@@ -1,8 +1,5 @@
 set(CMAKE_PREFIX_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../third_party/Eigen3)
 
-find_package(Eigen3 REQUIRED)
-include_directories (${EIGEN3_INCLUDE_DIRS})
-
 function(create_executable app_name file_name)
     add_executable(${app_name} ${file_name})
 
