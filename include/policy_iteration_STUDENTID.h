@@ -5,7 +5,7 @@
 #pragma once
 
 template<int map_size>
-inline Eigen::Matrix<int, map_size, map_size> policyIteration(const std::array<Eigen::Matrix<double, map_size, map_size>, 4>& rewards,
+inline Eigen::Matrix<int, map_size, map_size> policyIteration(const Eigen::Matrix<double, map_size, map_size>& rewards,
                                                               double discount_factor) {
   Eigen::Matrix<int, map_size, map_size> optimal_policy;
 

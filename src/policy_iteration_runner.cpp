@@ -10,15 +10,15 @@
 int main(int argc, char *argv[]) {
   const int map_size = 10;
 
-  std::array<Eigen::Matrix<double, map_size, map_size>, 4> rewards; // 0:up, 1:right, 2:down, 3:left
+  Eigen::Matrix<double, map_size, map_size> rewards;
   const double discount_factor = 0.9;
   srand((unsigned int) time(0));
 
   /// this generates random a reward function
-  for (auto& rew: rewards)
-    rew = (Eigen::Matrix<double, map_size, map_size>::Random().array() - 2.).matrix();
+  rewards = (Eigen::Matrix<double, map_size, map_size>::Random().array() - 2.).matrix();
 
   /// print out your answer
+  // 0:up, 1:right, 2:down, 3:left
   std::cout<<"optimal policy \n"<<policyIteration(rewards, discount_factor)<<std::endl;
   return 0;
 }
